@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компьютеры и будущее</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <img src="/img/Безымянный.png" alt="" class="logo">
+            
+        </div>
+        <div id="about">
+            <a href="#" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+            <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Преимущества</a>
+            <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+            <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Компьютеры и будущее</h1>
+        <h3>Будущее уже близко</h3>
+    </div>
+
+    <div id="main">
+        <div class="intro">
+            <h2>Уже совсем скоро</h2>
+            <span>Будущее теперь настоящее</span>
+        </div>
+        <div class="text">
+            <span>Системники уйдут в прошлое. Все будет в дисплее. Возможно он будет складываться или скручивать в рулон. Флешки и прочая периферия без проводов.</span>
+        </div>
+    </div>
+
+    <div id="overview">
+        <h2>Визуализация</h2>
+        <h4>Нашего будущего</h4>
+
+        <div class="img">
+            <img src="https://novate.ru/files/u35179/Comp-4.jpg" alt="">
+            <span>Удобство</span>
+        </div>
+        <div class="img">
+            <img src="https://www.e-xecutive.ru/uploads/article/image/1996371/thumb_it.jpg" alt="">
+            <span>Виртуальная реальность</span>
+        </div>
+        <div class="img">
+            <img src="https://masterpiecer-images.s3.yandex.net/309eafc3297411ee8acaa2024460db32:upscaled" alt="">
+            <span>Минимализм</span>
+        </div>
+        <div class="img">
+            <img src="https://avatars.dzeninfra.ru/get-zen_doc/9859611/pub_64c75b3be2687c5d7fe6f4f4_64c93ff964ce37305c6d0fc2/scale_1200" alt="">
+            <span>Футуризм</span>
+        </div>
+    </div>
+
+    <div id="contacts">
+        <center><h5>Обратная связь</h5></center>
+        <form id="form_input">
+            <label for="name">Имя<span>*</span></label><br>
+            <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+            <label for="email">Ваша почта<span>*</span></label><br>
+            <input type="email" placeholder="Введите email" name="email" id="email"><br>
+            <label for="message">Сообщение<span>*</span></label><br>
+            <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+            <div id="mess_send" class="btn">Отправить</div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id){
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll", function() {
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class", "fixed")
+        });
+    </script>
+</body>
+</html>
